@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="..\static\style.css" />
+    <title>PhptoKeeper</title>
+  </head>
+  <body>
+    <header>
+      <div class="main-menu-container">
+        <div class="menu-triger">
+          <div class="menu-triger-lines"></div>
+        </div>
+        <nav class="main-menu">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Favorites</a></li>
+            <li><a href="#">Setings</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="header-content-container">
+        <h1>PhotoKeeper</h1>
+        <div>
+          <form>
+            <div>
+              <input
+                type="file"
+                name="file"
+                id="inputUploadFile"
+                class="hidden"
+              />
+              <label for="inputUploadFile"
+                ><img src="..\static\img\camara.png" class="camara-button"
+              /></label>
+            </div>
+            <div class="uploadImageOverlay hidden">
+              <div class="uploadImageSettingsContainer">
+                <div>
+                  <img src="" class="uploadImage" />
+                </div>
+
+                <div>
+                  <input
+                    type="range"
+                    id="effectLevel"
+                    name="effectLevel"
+                    class="hidden"
+                  />
+
+                  <label for="effectLevel">
+                    <div class="effectLevelLine">
+                      <div class="effectLevelPin"></div>
+                      <div class="effectLevelProgressLine"></div>
+                    </div>
+                  </label>
+                </div>
+
+                <fieldset class="uploadEffectFieldset">
+                  <input
+                    type="radio"
+                    name="effect"
+                    id="uploadEffectNone"
+                    value="none"
+                    class="hidden"
+                    checked
+                  />
+                  <label
+                    for="uploadEffectNone"
+                    class="uploadEffectLabel inputActive"
+                  >
+                    <div class="uploadEffectPreview"></div>
+                  </label>
+
+                  <input
+                    type="radio"
+                    name="effect"
+                    id="uploadEffectChrome"
+                    value="grayscale"
+                    class="hidden"
+                  />
+                  <label for="uploadEffectChrome" class="uploadEffectLabel">
+                    <div class="uploadEffectPreview effectChrome"></div>
+                  </label>
+
+                  <input
+                    type="radio"
+                    name="effect"
+                    id="uploadEffectSepia"
+                    value="sepia"
+                    class="hidden"
+                  />
+                  <label for="uploadEffectSepia" class="uploadEffectLabel">
+                    <div class="uploadEffectPreview effectSepia"></div>
+                  </label>
+
+                  <input
+                    type="radio"
+                    name="effect"
+                    id="uploadEffectMarvin"
+                    value="invert"
+                    class="hidden"
+                  />
+                  <label for="uploadEffectMarvin" class="uploadEffectLabel">
+                    <div class="uploadEffectPreview effectMarvin"></div>
+                  </label>
+
+                  <input
+                    type="radio"
+                    name="effect"
+                    id="uploadEffectPhobos"
+                    value="saturate"
+                    class="hidden"
+                  />
+                  <label for="uploadEffectPhobos" class="uploadEffectLabel">
+                    <div class="uploadEffectPreview effectPhobos"></div>
+                  </label>
+
+                  <input
+                    type="radio"
+                    name="effect"
+                    id="uploadEffectHeat"
+                    value="contrast"
+                    class="hidden"
+                  />
+                  <label for="uploadEffectHeat" class="uploadEffectLabel">
+                    <div class="uploadEffectPreview effectHeat"></div>
+                  </label>
+                </fieldset>
+
+                <div>
+                  <button
+                    class="uploadFormButton active"
+                    type="reset"
+                    id="uploadCancel"
+                  >
+                    ВІДМІНА
+                  </button>
+                  <button
+                    class="uploadFormButton"
+                    type="submit"
+                    id="uploadSubmit"
+                    disabled
+                  >
+                    ВІДПРАВИТИ
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <p class="header-comment">Find something special</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="picturesContainer"></section>
+
+      <section class="openedPictureContainer hidden">
+        <div class="openedPicture">
+          <img src="..\static\img\close.png" class="closeButton" />
+          <img src="" class="openedPictureImg" />
+          <div class="openedPictureDescription">
+            <div class="descriptionText"></div>
+            <div class="openedPictureStatus">
+              <img src="..\static\img\comment.png" />
+              <span class="pictureComments"></span>
+              <img src="..\static\img\heart.png" />
+              <span class="pictureStars"></span>
+            </div>
+          </div>
+          <div class="pictureCommentsContainer"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>PhotoKeeper 2021</p>
+      <p>tel: 0 - 800 - 907 - 44</p>
+      <p>e-mail: info@photokeeper.com</p>
+    </footer>
+
+    <template id="templatePictureExample">
+      <div class="pictureExample">
+        <img src="" class="pictureImg" />
+        <div class="pictureStatus">
+          <img src="..\static\img\comment.png" />
+          <span class="pictureComments"></span>
+          <img src="..\static\img\heart_checked.png" />
+          <span class="pictureStars"></span>
+        </div>
+      </div>
+    </template>
+
+    <template id="commentTemplate">
+      <div class="commentBlock">
+        <p class="commentText"></p>
+        <p class="commentAuthor">Anonymous</p>
+      </div>
+    </template>
+
+    <script src="..\static\script.js"></script>
+  </body>
+</html>
