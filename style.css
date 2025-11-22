@@ -443,3 +443,22 @@ footer{
 	position: absolute;
 	background-color: #3A6073;
 }
+
+.uploadFormHashtags {
+	width: 500;
+	font-family: 'Open Sans';
+	font-size: 20px;
+	display: block;
+	margin: 30px auto;
+	border-radius: 5px;
+}
+
+.uploadFormDescription {
+	width: 500px;
+	font-family: 'Open Sans';
+	font-size: 20px;
+	display: block;
+	margin: 30px auto;
+	border-radius: 5px;
+	padding: 10px;
+}

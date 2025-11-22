@@ -121,7 +121,7 @@ closedButton.addEventListener('click', function(){
 //Форма завантаження зображення
 let inputUploadFile = document.querySelector('#inputUploadFile')
 inputUploadFile.addEventListener('change', function(){
-	if(inputUploadFile.files[0].type.includes('image')){
+	if(inputUploadFile.files[0] && inputUploadFile.files[0].type.includes('image')){
 		let reader = new FileReader();
 		reader.readAsDataURL(inputUploadFile.files[0]);
 		reader.addEventListener('load', function(){
@@ -135,8 +135,10 @@ inputUploadFile.addEventListener('change', function(){
 			let settingsContainer = document.querySelector('.uploadImageOverlay')
 			settingsContainer.classList.remove('hidden')
 		})		
+	} else {
+		alert("Select an image file!")
 	}
-})
+});
 
 
 let buttonCloseUpload = document.querySelector('#uploadCancel')
@@ -209,7 +211,38 @@ uploadImage.style.filter = 'none'
 
 }
 
+function changeStatusSubmiButton(active){
+	let submitButton = document.querySelector('#uploadSubmit')
+}
 
+if (active){
+	submitButton.classList.add("active")
+	submitButton.disabled = true
+	console.log("button able")
+}
+else {
+	submitButton.classList.remove("active")
+	submitButton.disabled = false
+	console.log("button disabled")
+}
+
+let inputHashtags = document.querySelector(".uploadFormHashtags")
+
+inputHashtags.addEventListener("change", function () {
+	let errorMessage =  document.querySelector(".uploadFormErrorMessage");
+
+	if (inputHashtags.value.includes("#")) {
+		let hashtagsArray = inputHashtags.value.split(" ");
+
+		changeStatusSubmitButton(true)
+		errorMessage.innerText = ""
+	}
+	else {
+		changeStatusSubmiButton(false)
+		errorMessage.innerText = "All Hastags have to start with #"
+	}
+
+});
 
 
 
